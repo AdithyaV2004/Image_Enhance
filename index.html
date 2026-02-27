@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancement Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Enhancement Tool</h1>
+        <p class="subtitle">Upload an image to see various enhancement techniques</p>
+        
+        <div class="upload-section">
+            <input type="file" id="fileInput" accept="image/*">
+            <label for="fileInput" class="upload-btn">Choose Image</label>
+            <span id="fileName">No file chosen</span>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Processing image...</p>
+        </div>
+
+        <div id="results" class="results-grid">
+            <div class="image-container">
+                <h3>Original</h3>
+                <canvas id="original"></canvas>
+            </div>
+            <div class="image-container">
+                <h3>Contrast Enhanced (Color)</h3>
+                <canvas id="contrastEnhanced"></canvas>
+            </div>
+            <div class="image-container">
+                <h3>Blurred</h3>
+                <canvas id="blurred"></canvas>
+            </div>
+            <div class="image-container">
+                <h3>Final Enhanced (Color)</h3>
+                <canvas id="finalEnhanced"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- OpenCV.js -->
+    <script async src="https://docs.opencv.org/4.5.2/opencv.js" onload="onOpenCvReady()"></script>
+    <script src="script.js"></script>
+</body>
+</html>
